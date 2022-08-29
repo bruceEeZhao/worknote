@@ -8,6 +8,14 @@ docker pull osrf/ros:humble-desktop-full
 
 ## 2. 运行容器
 
+主机上需要开启权限使得docker容器可以使用主机的显示器
+
+```bash
+xhost +
+```
+
+
+
 ```bash
 docker run -itd --privileged=true  -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY=:1  osrf/ros:humble-desktop-full /bin/bash
 ```
